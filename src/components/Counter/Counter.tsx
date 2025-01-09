@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 //Шаг 1 - импорт хука useState из react
 // import { useState } from "react";
 import { CounterContainer, ButtonWrapper, CounterResult } from './styles';
-import { CounterProps } from "./types.js";
+import type { CounterProps } from "./types.js";
 
 function Counter({ countValue, onMinus, onPlus }: CounterProps) {
   // console.log("Counter render or re-render");

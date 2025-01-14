@@ -14,7 +14,7 @@ export const feedbackSlice = createAppSlice({
     }),
 
     plusDislike: create.reducer((state: FeedbackStateSlice) => {
-      state.grade[1].countDislike = state.grade[1].countDislike + 1
+      state.grade[0].countDislike = state.grade[0].countDislike + 1
     }),
   }),
 

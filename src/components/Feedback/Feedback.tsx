@@ -11,6 +11,7 @@ import {
   DislikesResult,
   DislikeWrapper,
   FeedbackContainer,
+  FeedbackWrapper,
   LikeImage,
   LikeImageWrapper,
   LikeQuantityWrapper,
@@ -20,6 +21,7 @@ import {
 
 import LikeDislikePictures from "../../assets/like-dislike.png"
 import { v4 } from "uuid"
+import Button from "../Button/Button"
 
 function Feedback() {
   const gradeData = useAppSelector(feedbackSliceSelectors.grade)
@@ -34,6 +36,10 @@ function Feedback() {
     dispatch(feedbackSliceActions.plusLike())
   }
 
+  const onReset = () => {
+    dispatch(feedbackSliceActions.reset())
+  }
+
   const likeQuantity = gradeData.map(grade => {
     return <LikesResult key={v4()}>{grade.countLike}</LikesResult>
   })
@@ -44,19 +50,22 @@ function Feedback() {
 
   return (
     <FeedbackContainer>
-      <LikeWrapper>
-        <LikeImageWrapper onClick={onPlusLike}>
-          <LikeImage src={LikeDislikePictures} alt="like" />
-        </LikeImageWrapper>
+      <FeedbackWrapper>
+        <LikeWrapper>
+          <LikeImageWrapper onClick={onPlusLike}>
+            <LikeImage src={LikeDislikePictures} alt="like" />
+          </LikeImageWrapper>
 
-        <LikeQuantityWrapper>{likeQuantity}</LikeQuantityWrapper>
-      </LikeWrapper>
-      <DislikeWrapper>
-        <DislikeQuantityWrapper>{dislikeQuantity}</DislikeQuantityWrapper>
-        <DislikeImageWrapper onClick={onPlusDislike}>
-          <DislikeImage src={LikeDislikePictures} alt="dislike" />
-        </DislikeImageWrapper>
-      </DislikeWrapper>
+          <LikeQuantityWrapper>{likeQuantity}</LikeQuantityWrapper>
+        </LikeWrapper>
+        <DislikeWrapper>
+          <DislikeQuantityWrapper>{dislikeQuantity}</DislikeQuantityWrapper>
+          <DislikeImageWrapper onClick={onPlusDislike}>
+            <DislikeImage src={LikeDislikePictures} alt="dislike" />
+          </DislikeImageWrapper>
+        </DislikeWrapper>
+      </FeedbackWrapper>
+      <Button name="RESET" onClick={onReset} />
     </FeedbackContainer>
   )
 }

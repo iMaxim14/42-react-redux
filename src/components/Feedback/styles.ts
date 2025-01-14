@@ -3,12 +3,17 @@ import styled from "@emotion/styled"
 
 export const FeedbackContainer = styled.div`
   display: flex;
-  gap: 70px;
+  flex-direction: column;
+  gap: 30px;
+`
+export const FeedbackWrapper = styled.div`
   border: 2px solid #d8d8d8;
   border-radius: 5px;
   padding: 30px;
   min-width: 400px;
-  background-color: #F4FDFF;
+  background-color: #f4fdff;
+  display: flex;
+  gap: 70px;
 `
 
 const likeDislikeStyles = css`
@@ -62,17 +67,13 @@ const basicImageWrapper = css`
 `
 
 export const LikeImageWrapper = styled.button`
-${basicImageWrapper}
+  ${basicImageWrapper}
 `
 
 export const DislikeImageWrapper = styled.button`
   ${basicImageWrapper}
 `
 
-export const LikeQuantityWrapper = styled.div`
- 
-`
+export const LikeQuantityWrapper = styled.div``
 
-export const DislikeQuantityWrapper = styled.div`
- 
-`
+export const DislikeQuantityWrapper = styled.div``

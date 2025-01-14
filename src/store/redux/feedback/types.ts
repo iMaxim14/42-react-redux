@@ -1,6 +1,6 @@
 export interface GradeData {
-  countLike: number
-  countDislike: number
+  likes: number
+  dislikes: number
 }
 
 export interface FeedbackStateSlice {

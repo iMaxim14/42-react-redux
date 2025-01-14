@@ -41,11 +41,11 @@ function Feedback() {
   }
 
   const likeQuantity = gradeData.map(grade => {
-    return <LikesResult key={v4()}>{grade.countLike}</LikesResult>
+    return <LikesResult key={v4()}>{grade.likes}</LikesResult>
   })
 
   const dislikeQuantity = gradeData.map(grade => {
-    return <DislikesResult key={v4()}>{grade.countDislike}</DislikesResult>
+    return <DislikesResult key={v4()}>{grade.dislikes}</DislikesResult>
   })
 
   return (
